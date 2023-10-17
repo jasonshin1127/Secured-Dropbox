@@ -20,16 +20,20 @@ Malicious users may try to perform operations on arbitrary files by utilizing th
 Design Requirements:
 
 1. Usernames / Passwords
+
 (Usernames)
+
 The client SHOULD assume that each user has a unique username.
 Usernames are case-sensitive: Bob and bob are different users.
 The client SHOULD support usernames of any length greater than zero.
+
 (Passwords)
+
 The client MUST NOT assume each user has a unique password. Like the real world, users may happen to choose the same password.
 The client MAY assume each user’s password generally is a good source of entropy. However, the attackers possess a precomputed lookup table containing hashes of common passwords downloaded from the internet.
 The client SHOULD support passwords length greater than or equal to zero.
 
-2. User Sessions
+3. User Sessions
 The client application MUST allow many different users to use the application at the same time. For example, Bob and Alice can each run the client application on their own devices at the same time.
 
 The client MUST support a single user having multiple active sessions at the same time. All file changes MUST be reflected in all current user sessions immediately (i.e. without terminating the current session and re-authenticating).
